@@ -1,0 +1,270 @@
+{
+  "info": {
+    "_postman_id": "178690bf-4927-4c35-8908-426a79173157",
+    "name": "Postman basics [Arthur Morgan]",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57303168",
+    "_collection_link": "https://go.postman.co/collection/57303168-178690bf-4927-4c35-8908-426a79173157?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Registration",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.collectionVariables.set(\"token\", pm.response.json().user.token);",
+              "",
+              "pm.test(\"Status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"user\": {\r\n    \"username\": \"renatameirellesqa2026\",\r\n    \"email\": \"renatameirellesqa2026@gmail.com\",\r\n    \"password\": \"Renata@123456\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://conduit.mate.academy/api/users",
+          "protocol": "https",
+          "host": [
+            "conduit",
+            "mate",
+            "academy"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.collectionVariables.set(\"token\", pm.response.json().user.token);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"user\": {\r\n    \"email\": \"renatameirellesqa2026@gmail.com\",\r\n    \"password\": \"Renata@123456\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://conduit.mate.academy/api/users/login",
+          "protocol": "https",
+          "host": [
+            "conduit",
+            "mate",
+            "academy"
+          ],
+          "path": [
+            "api",
+            "users",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {\r",
+              "  pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://conduit.mate.academy/api/user",
+          "protocol": "https",
+          "host": [
+            "conduit",
+            "mate",
+            "academy"
+          ],
+          "path": [
+            "api",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Follow user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token {{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://conduit.mate.academy/api/profiles/drake_marquardt/follow",
+          "protocol": "https",
+          "host": [
+            "conduit",
+            "mate",
+            "academy"
+          ],
+          "path": [
+            "api",
+            "profiles",
+            "drake_marquardt",
+            "follow"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Unfollow user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"User is not followed\", function () {\r",
+              "    pm.expect(pm.response.json().profile.following).to.eql(false);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://conduit.mate.academy/api/profiles/drake_marquardt/follow",
+          "protocol": "https",
+          "host": [
+            "conduit",
+            "mate",
+            "academy"
+          ],
+          "path": [
+            "api",
+            "profiles",
+            "drake_marquardt",
+            "follow"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
