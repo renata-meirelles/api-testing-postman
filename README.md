@@ -31,4 +31,13 @@ Arquivo disponível neste repositório:
 
 ## Objetivo
 
-Desenvolver conhecimentos em testes de API e aprender a validar o comportamento de aplicações através de requisições HTTP.
+Desenvolver conhecimentos em testes de API e aprender a validar o comportamento de aplicações através de requisições HTTP.                ### Students API
+
+Projeto de testes de API realizado durante meus estudos de QA.
+
+Neste projeto pratiquei:
+
+- Requisições GET
+- Validação de status code
+- Verificação das respostas da API
+- Organização de requests em uma Collection do Postman   
