@@ -94,5 +94,17 @@ Teste realizado no Postman para validar a autenticação de usuário.
 
 ![Resultado dos testes de login no Postman](WhatsApp%20Image%202026-10-01%20at%2016.22.57.jpeg)
 
+### Evidência de execução — Sign Up
+
+Teste de cadastro de um novo usuário na API Conduit.
+
+**Resultado:** 200 OK — 3 testes aprovados.
+
+- Status code is 200 — PASSED
+- Response contains user — PASSED
+- Token is returned — PASSED
+
+![Resultado dos testes de Sign Up no Postman](WhatsApp%20Image%202026-10-01%20at%2018.02.56.jpeg)
+
 
 
