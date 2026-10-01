@@ -31,7 +31,7 @@ Arquivo disponível neste repositório:
 
 ## Objetivo
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/646319c4-ae7c-4446-b169-aaf3194ef1b3" />
+
 
 - Verificação das respostas da API
 - Organização de requests em uma Collection do Postman   
