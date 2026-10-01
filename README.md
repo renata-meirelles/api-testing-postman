@@ -82,5 +82,17 @@ Esta atividade contribuiu para minha compreensão da comunicação entre cliente
 
 **Documentação:** Renata Meirelles da Silva.
 
+## Evidência de execução — Conduit API
+
+Teste realizado no Postman para validar a autenticação de usuário.
+
+**Resultado da execução:** 200 OK — 3 testes aprovados.
+
+- Status code is 200 — PASSED
+- Response contains user — PASSED
+- Token is returned — PASSED
+
+![Resultado dos testes de login no Postman](WhatsApp%20Image%202026-10-01%20at%2016.22.57.jpeg)
+
 
 
